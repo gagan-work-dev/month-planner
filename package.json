@@ -1,0 +1,28 @@
+{
+  "name": "month-planner-rbc-light",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^2.30.0",
+    "react": "^18.3.1",
+    "react-big-calendar": "^1.13.1",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-big-calendar": "^1.16.2",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.3"
+  }
+}

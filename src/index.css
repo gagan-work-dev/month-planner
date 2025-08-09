@@ -1,0 +1,303 @@
+@import "react-big-calendar/lib/css/react-big-calendar.css";
+
+:root {
+  --bg: #f6f8fb;
+  --panel: #ffffff;
+  --text: #0d1b2a;
+  --muted: #5b6b86;
+  --border: #e2e8f0;
+  --pill: #2563eb;
+  --pill-weak: #e5efff;
+  --today: #eef6ff;
+  --accent: #111827;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html, body, #root {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial;
+  background: var(--bg);
+  color: var(--text)
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%
+}
+
+.topbar {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+  position: sticky;
+  top: 0;
+  z-index: 5
+}
+
+.brand {
+  font-weight: 700
+}
+
+.spacer {
+  flex: 1
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: #f9fafb;
+  color: var(--accent);
+  padding: .45rem .75rem;
+  border-radius: 10px;
+  cursor: pointer
+}
+
+.btn.primary {
+  background: var(--pill);
+  border-color: transparent;
+  color: #fff
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  padding: 16px;
+  min-height: 0;
+  flex: 1
+}
+
+.filters-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+  display: grid;
+  gap: .75rem;
+  position: sticky;
+  top: 64px;
+  height: max-content
+}
+
+.search {
+  width: 100%;
+  padding: .6rem .75rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text)
+}
+
+.section-title {
+  opacity: .9;
+  margin-top: .25rem;
+  font-weight: 600;
+  font-size: .9rem
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: .5rem
+}
+
+.segmented {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap
+}
+
+.segmented button {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--accent);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  cursor: pointer
+}
+
+.segmented .active {
+  background: var(--pill);
+  border-color: transparent;
+  color: #fff
+}
+
+.calendar-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0
+}
+
+.rbc-toolbar {
+  display: none
+}
+
+.rbc-calendar {
+  background: transparent
+}
+
+.rbc-header {
+  background: #fafafa;
+  color: var(--accent);
+  border-color: var(--border)
+}
+
+.rbc-month-view, .rbc-time-view, .rbc-agenda-view {
+  border-color: var(--border)
+}
+
+.rbc-day-bg {
+  background: #fff
+}
+
+.rbc-off-range-bg {
+  background: #fafbff
+}
+
+.rbc-today {
+  background: var(--today)
+}
+
+.rbc-time-content {
+  border-top-color: var(--border)
+}
+
+.rbc-time-slot {
+  border-color: #eef2f7
+}
+
+.rbc-event {
+  background-color: var(--pill);
+  border: none;
+  border-radius: 8px;
+  padding: .15rem .35rem;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .06)
+}
+
+.rbc-event-label {
+  opacity: .9
+}
+
+.rbc-event-content {
+  font-weight: 600
+}
+
+.rbc-show-more {
+  color: #2563eb
+}
+
+.legend {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border);
+  background: #fafafa
+}
+
+.legend .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px
+}
+
+.cat-to-do {
+  background: #2563eb
+}
+
+.cat-in-progress {
+  background: #16a34a
+}
+
+.cat-review {
+  background: #7c3aed
+}
+
+.cat-completed {
+  background: #f59e0b
+}
+
+@media (max-width:1100px) {
+  .layout {
+    grid-template-columns: 1fr
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50
+}
+
+.modal {
+  width: min(560px, 92vw);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .08)
+}
+
+.modal-header {
+  padding: .9rem 1rem;
+  border-bottom: 1px solid var(--border)
+}
+
+.modal-body {
+  padding: 1rem;
+  display: grid;
+  gap: .75rem
+}
+
+.modal-footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  border-top: 1px solid var(--border)
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem
+}
+
+.field input, .field select {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .6rem .75rem
+}
+
+.row.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem
+}
+
+.danger {
+  background: #ef4444;
+  color: #fff;
+  border-color: transparent
+}
